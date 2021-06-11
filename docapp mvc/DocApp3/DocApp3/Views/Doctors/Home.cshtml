@@ -1,0 +1,39 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        img {
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Welcome Doctor!</h2>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
+                <img src="https://i.pcmag.com/imagery/articles/02F5za5ENmhpE0wpuVvAqTl-9.1569893002.fit_lim.size_1600x900.jpg" class="card-img-top" alt="...">
+                <a asp-controller="Doctors" asp-action="MyAppointment" class="btn btn-primary">My Appointments</a>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+
+            <div class="card" style="width: 18rem;">
+                <img src="https://www.statnews.com/wp-content/uploads/2021/02/AdobeStock_300785040-768x432.jpeg" class="card-img-top" alt="...">
+                <a asp-controller="Doctors" asp-action="Prescription" class="btn btn-primary">ADD Prescription</a>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfDt7Sc6M0qHOvIb0JwWM5qB7QLxkrqgw-bg&usqp=CAU" class="card-img-top" alt="...">
+                <a asp-controller="Doctors" asp-action="MyRatings" class="btn btn-primary">View Review</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+

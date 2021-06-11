@@ -1,0 +1,38 @@
+﻿@model IEnumerable<DocApp3.Models.Appointment>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppointmentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HealthIssue)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PatientID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppointmentDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HealthIssue)
+                </td>
+                <td>
+                    <a asp-controller="Doctors" asp-action="WritePrescription" asp-route-aptid="@item.AppointmentID">Select</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

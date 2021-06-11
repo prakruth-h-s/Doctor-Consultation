@@ -1,0 +1,76 @@
+<h3>Login</h3>
+<div style="width: 400px;">
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+
+      <div class="form-group">
+        <label for="name">Email</label>
+        <input type="text" class="form-control" id="email"  [(ngModel)]=email required  name="email" formControlName="email">
+      </div>
+      <p style="color: red;">{{errorMsg}}</p>
+<br>
+      <div class="form-group">
+        <label for="name">Password</label>
+        <input type="password" class="form-control" id="password"  [(ngModel)]=password name="password" formControlName="password">
+      </div>
+<br>
+<label for="Role">Login as:</label>&nbsp;&nbsp;
+<select name="Role" formControlName="Role">
+  <option value="Patient">Patient</option>
+  <option value="Doctor">Doctor</option>
+</select>
+
+<!-- <div style="color: blue;">
+<a [routerLink] = "['/add1']">  <u>Click here to Register as Doctor</u> </a>
+</div> -->
+<br><br><br>
+<div style="color: blue;">
+  <button type="submit" class="btn btn-success">Login</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a [routerLink] = "['/add']">  <u>New User?</u> </a>
+  </div>
+<br>
+    
+  </form>
+</div>
+<div *ngIf="role=='Patient';else doc">
+<div *ngIf="email != patient.email else block" style="color: red;">
+  <b>email not found</b>
+</div>
+<ng-template #block>
+  <div *ngIf="password != patient.password else blockk" style="color: red;">
+ <b> password wrong</b>
+</div>
+<br>
+<ng-template #blockk>
+  <h4>{{enroute()}}</h4>
+   
+</ng-template>
+</ng-template>
+</div>
+<ng-template #doc>
+<div *ngIf="email != doctor.email else block1" style="color: red;">
+  <b>email not found</b>
+</div>
+<ng-template #block1>
+  <div *ngIf="password != doctor.password else blockk1" style="color: red;">
+ <b> password wrong</b>
+</div>
+</ng-template>
+<br>
+
+<ng-template #blockk1> 
+  <h4>{{enroute()}}</h4>   
+  
+ 
+  <h4>You successfully logged in ...!</h4>
+   
+</ng-template>
+</ng-template>
+
+
+
+
+
+
+

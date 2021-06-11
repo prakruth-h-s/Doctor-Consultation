@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+   
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a  [routerLink] = "['/home']" class="nav-link" routerLinkActive="active">Home</a>
+        </li>
+      <li class="nav-item">
+        <a [routerLink] = "['/specialization']" class="nav-link" routerLinkActive="active">Book Appointment</a>
+    </li>
+    <li class="nav-item">
+      <a [routerLink] = "['/viewprescription']"class="nav-link" routerLinkActive="active">My Prescription</a>
+    </li>
+    <li class="nav-item">
+      <a  [routerLink] = "['/report']"class="nav-link" routerLinkActive="active">My History</a>
+    </li>
+      &nbsp;&nbsp;&nbsp;
+    <li class="nav-item">
+      <button type="submit" style="background-color: aqua;" class="btn btn-info" (click)="logout()">Logout</button>
+  </li>
+    </ul>
+  </nav>
+<h2>Prescription</h2>
+<div class="panel-body">
+    <table class="table table-striped">   
+        <thead>
+    <tr>
+        <th>DoctorID</th>
+        <th>Date</th>
+        <th>Health Issue</th>
+        <th>Prescription</th>
+        <th>Status</th>
+        <th>Add Review</th>
+    </tr>
+</thead>
+<tbody>
+        <tr  *ngFor="let p of prescription">
+            
+            <td>{{p.doctorID}}</td>
+            <td>{{p.date}}</td>
+            <td>{{p.healthIssue}}</td>
+            <td>{{p.prescription}}</td>
+            <td>{{p.status}}</td>
+            <td><button (click)="onSelect(p.appointmentID)" class="btn btn-danger">select</button></td>
+        </tr>
+    </tbody>
+</table>
+</div> 

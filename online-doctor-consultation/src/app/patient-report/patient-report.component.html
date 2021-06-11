@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+   
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a  [routerLink] = "['/home']" class="nav-link" routerLinkActive="active">Home</a>
+  </li>
+    <li class="nav-item">
+      <a [routerLink] = "['/specialization']" class="nav-link" routerLinkActive="active">Book Appointment</a>
+  </li>
+  <li class="nav-item">
+    <a [routerLink] = "['/viewprescription']"class="nav-link" routerLinkActive="active">My Prescription</a>
+  </li>
+  <li class="nav-item">
+    <a  [routerLink] = "['/report']"class="nav-link" routerLinkActive="active">My History</a>
+  </li>
+    &nbsp;&nbsp;&nbsp;
+  <li class="nav-item">
+    <button type="submit" style="background-color: aqua;" class="btn btn-info" (click)="logout()">Logout</button>
+</li>
+  </ul>
+</nav>
+<h2>Patient Consultation History</h2>
+    
+<form [formGroup]="form" (ngSubmit)="onsubmit(form.value)">
+    <div class="form-group">
+        <label for="Status">Filter by Status:</label>
+        &nbsp;&nbsp;
+          <input id="Pending" type="radio" value="Pending" name="Status" formControlName="Status">
+          <label for="Pending">Pending</label>
+        &nbsp;&nbsp;
+          <input id="cancelled" type="radio" value="cancelled" name="Status" formControlName="Status">
+          <label for="cancelled">cancelled</label>
+          &nbsp;&nbsp;
+        <input id="Done" type="radio" value="Done" name="Status" formControlName="Status">
+        <label for="Done">Done</label>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="btn btn-primary" type="submit">Apply</button>
+     </div>   
+</form> 
+<p><b>Status: <span style="color: rgb(21, 206, 21);">{{temp}}</span> </b></p>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Doctor ID</th>
+            <th>Appointment Date</th>
+            <th>Health Issue</th>
+            <th>Prescription</th>
+            <th>Review</th>
+            
+          </tr>
+        </thead>
+        <tbody>  
+              
+            <ng-container *ngFor="let doctor of $appointments1">
+            <tr *ngIf="doctor.status==temp">
+            <td>{{doctor.doctorID}}</td>            
+            <td>{{doctor.date}}</td>
+            <td>{{doctor.healthIssue}}</td>
+            <td>{{doctor.prescription}}</td>
+            <td>{{doctor.review}}</td>
+          </tr>
+          </ng-container>
+        </tbody>
+      </table>

@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql.local",
+      "connectionId": "AppointmentContext"
+    },
+    "mssql2": {
+      "type": "mssql.local",
+      "connectionId": "PatientContext"
+    },
+    "mssql3": {
+      "type": "mssql.local",
+      "connectionId": "DoctorContext"
+    }
+  }
+}

@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+   
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a  [routerLink] = "['/home']" class="nav-link" routerLinkActive="active">Home</a>
+        </li>
+      <li class="nav-item">
+        <a [routerLink] = "['/specialization']" class="nav-link" routerLinkActive="active">Book Appointment</a>
+    </li>
+    <li class="nav-item">
+      <a [routerLink] = "['/viewprescription']"class="nav-link" routerLinkActive="active">My Prescription</a>
+    </li>
+    <li class="nav-item">
+      <a  [routerLink] = "['/report']"class="nav-link" routerLinkActive="active">My History</a>
+    </li>
+      &nbsp;&nbsp;&nbsp;
+    <li class="nav-item">
+      <button type="submit" style="background-color: aqua;" class="btn btn-info" (click)="logout()">Logout</button>
+  </li>
+    </ul>
+  </nav>
+<h2>Specialization</h2>
+<div  class="row">
+    <div class="col-sm-4">
+<div class="card" style="width: 18rem;">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-dxP0GAsryoD4TbeGIfJARNSQlFqDVrK--N-0Sd3dJsLuiNrKuEsQTOL-1q261BMt9g&usqp=CAU" class="card-img-top" alt="...">
+    <a (click)="onSelect('General Physician')" class="btn btn-primary">General Physician</a>
+</div>
+</div>
+
+<div class="col-sm-4">
+    
+    <div class="card" style="width: 18rem;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEeLeex1Ij2Umq0dYr7S7OCwkhsDrNvNXnqg&usqp=CAU" class="card-img-top" alt="...">
+        <a (click)="onSelect('Dermatologist')" class="btn btn-primary">Dermatologist</a>
+    </div>
+    </div>
+
+<div class="col-sm-4">
+<div class="card" style="width: 18rem;">
+    <img src="https://menucalc.com/wp-content/uploads/dietitian.jpg" class="card-img-top" alt="...">
+    <a (click)="onSelect('Dietician')" class="btn btn-primary">Dietician</a>
+</div>
+</div>
+
+<div class="col-sm-4">
+<div class="card" style="width: 18rem;">
+    <img src="https://www.nm.org//-/media/northwestern/healthbeat/images/health%20library/nm-ten-signs-cardiologist_preview.jpg" class="card-img-top" alt="...">
+    <a (click)="onSelect('Cardiology')" class="btn btn-primary">Cardiologist</a>
+</div>
+</div>
+<div class="col-sm-4">
+<div class="card" style="width: 18rem;">
+    <img src="https://www.thechicagoschool.edu/insightadmin/2019/11/why-psychology-770x404.jpg" class="card-img-top" alt="...">
+    <a (click)="onSelect('Gynocologist')" class="btn btn-primary">Psychologist</a>
+</div>
+</div>
+<div class="col-sm-4">
+    <div class="card" style="width: 18rem;">
+        <img id="d" src="https://i.pinimg.com/474x/f1/41/16/f141161de192960d8ad42f356d207059.jpg" class="card-img-top" alt="...">
+        <a (click)="onSelect('Gynocologist')" class="btn btn-primary">Gynecologist</a>
+    </div>
+    </div>
+</div>
